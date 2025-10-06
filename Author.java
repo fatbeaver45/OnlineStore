@@ -1,4 +1,25 @@
-public class Author
-{
+public class Author {
+    public Author(String name, Date dob) {
+        this.name = name;
+        this.dob = dob;
+    }
 
+    private String name;
+    private Date dob;
+
+    public String getName() {
+        return name;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
 }

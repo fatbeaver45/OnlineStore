@@ -21,7 +21,36 @@
 
     Where these variables are stored and how to name them is up to you!
 */
+
+import java.util.ArrayList;
+
 public class Store
 {
 
+  private int profit;
+  private ArrayList<ItemForSale> items = new ArrayList<ItemForSale>();
+
+  Author authorless = new Author(null, null);
+
+  public ArrayList<ItemForSale> showItems(){
+    return items;
+  }
+  public void addItem(ItemForSale item){
+    items.add(item);
+  }
+  public void sellItem(ItemForSale item){
+    profit+=item.getPrice();
+    items.remove(item);
+  }
+  public Author creator(ItemForSale item){
+    return item.getAuthor();
+  }
+  public boolean hasCreator(ItemForSale item){ // this should be always checked before using the method 'creator'
+    if(item instanceof Book || item instanceof Movie){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }
