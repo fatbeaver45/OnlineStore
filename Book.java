@@ -7,10 +7,13 @@ public class Book extends ItemForSale {
 
     private String publisher;
 
+    // precondition: 
+    //postcondition: returns the publisher's name
     public String getPublisher() {
         return publisher;
     }
-
+    // precondition: 
+    //postcondition: sets publisher name as the input
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }

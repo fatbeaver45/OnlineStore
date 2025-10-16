@@ -31,21 +31,31 @@ public class Store
   private ArrayList<ItemForSale> items = new ArrayList<ItemForSale>();
 
   Author authorless = new Author(null, null);
-
+    //precondition: 
+    //postcondition: returns ArrayList of all items on sale
   public ArrayList<ItemForSale> showItems(){
     return items;
   }
+  //precondition: 
+  //postcondition: adds an item to the ArrayList items
   public void addItem(ItemForSale item){
     items.add(item);
   }
+  //precondition: 
+  //postcondition: removes an item from ArrayList items and adds the sell price to profit
   public void sellItem(ItemForSale item){
     profit+=item.getPrice();
     items.remove(item);
   }
+  //precondition: item has an Author. To check, run canHaveCreator() beforehand
+  //postcondition: returns the item's Author
   public Author creator(ItemForSale item){
     return item.getAuthor();
   }
-  public boolean hasCreator(ItemForSale item){ // this should be always checked before using the method 'creator'
+  //precondition: 
+  //postcondition: returns if the item can have an author, helpful for if running canHaveCreator(). 
+  // if the item's author is null, it will still return true, as it only checks for if it is an instance of the subclasses.
+  public boolean canHaveCreator(ItemForSale item){ 
     if(item instanceof Book || item instanceof Movie){
       return true;
     }
